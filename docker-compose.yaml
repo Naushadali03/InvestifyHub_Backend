@@ -8,7 +8,7 @@ services:
       MYSQL_USER: app_user
       MYSQL_PASSWORD: app_password
     ports: 
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
@@ -25,8 +25,8 @@ services:
     container_name: investifyhub_app
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/InvestifyHub
-      SPRING_DATASOURCE_USERNAME: app_user   # 👈 match MySQL user
-      SPRING_DATASOURCE_PASSWORD: app_password
+      SPRING_DATASOURCE_USERNAME: root   # 👈 match MySQL user
+      SPRING_DATASOURCE_PASSWORD: root
       SPRING_PROFILES_ACTIVE: default
     ports: 
       - "8080:8080"
